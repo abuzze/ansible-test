@@ -1,6 +1,6 @@
 ---
 - name: Install Standard Software
-  hosts: Local Boxes
+  hosts: Ubuntu 14.04 
   user: vagrant
   sudo: yes
 
