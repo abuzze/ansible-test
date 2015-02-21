@@ -1,0 +1,15 @@
+---
+- name: install apache and a few need packages
+  apt: name={{item}} state=install
+  with_items:
+    - apache2
+    - apache2-mpm-prefork
+    - apache2-utils
+    - apache2.2-common
+    - libapache2-mod-php5
+    - libapr1
+    - libaprutil1
+    - libdbd-mysql-perl
+    - libdbi-perl
+    - libnet-daemon-perl
+    - libplrpc-perl

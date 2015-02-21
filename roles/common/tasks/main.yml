@@ -1,0 +1,15 @@
+---
+- name: Update repositories cache if the last one is more than 3600 seconds ago
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: install zsh
+  apt: name=zsh
+
+-name: install fail2ban
+ apt: name=fail2ban
+
+-name: install htop
+ apt: name=htop
+
+-name: upgrade all packages
+ apt: upgrade=dist
