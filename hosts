@@ -1,6 +1,6 @@
 [interal_server]
 client1
 client2
-
+192.168.33.20
 [downtime_needed]
 client2
