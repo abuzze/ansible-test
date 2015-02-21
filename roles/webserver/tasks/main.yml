@@ -1,6 +1,6 @@
 ---
 - name: install apache and a few need packages
-  apt: name={{item}} state=install
+  apt: name={{item}} state=installed
   with_items:
     - apache2
     - apache2-mpm-prefork
