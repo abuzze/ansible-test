@@ -5,7 +5,6 @@
     - apache2
     - apache2-mpm-prefork
     - apache2-utils
-    - apache2.2-common
     - libapache2-mod-php5
     - libapr1
     - libaprutil1
