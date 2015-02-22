@@ -1,0 +1,12 @@
+---
+- name: Upgrade all ubuntu packages to latest version
+  hosts: Ubuntu 14.04
+  user: vagrant
+  sudo: yes
+
+tasks:
+  - name: Update repositories cache if the last one is more than 3600 seconds ago
+    apt: update_cache=yes cache_valid_time=3600
+
+  - name: upgrade all packages
+    apt: upgrade=dist
