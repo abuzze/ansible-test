@@ -10,3 +10,15 @@
 
   - name: upgrade all packages
     apt: upgrade=dist
+
+  - name: ensure package debian goodies which contains checkrestart is installed
+    apt: name=debian-goodies state=present
+
+  - name: check if a restart is needed after a security update
+    shell: /usr/sbin/checkrestart
+    register: restart_check
+    ignore_errors: True
+
+  - name: reboot the server because a restart is need
+    shell: /sbin/shutdown -r 1 &
+    when: restart_check.stdout.find('Found 0 processes using old versions of upgraded files') == -1
